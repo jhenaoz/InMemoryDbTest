@@ -1,0 +1,33 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 9005
+logging:
+  level: DEBUG
+  loggers:
+    com.zilliant: DEBUG
+
+#database:
+#  driverClass: org.h2.Driver
+#  user: zippy
+#  password: zippy
+#  url: jdbc:h2:./target/example
+#  properties:
+#    charSet: UTF-8
+#    hibernate.dialect: org.hibernate.dialect.H2Dialect
+#    hibernate.hbm2ddl.auto: create-drop
+
+
+database:
+  driverClass: org.postgresql.Driver
+  user: zippy
+  password: zippy
+  url: jdbc:postgresql://localhost:5432/
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.hbm2ddl.auto: create-drop
+    hibernate.show.sql: true
+
+template: hello, %s!
+
