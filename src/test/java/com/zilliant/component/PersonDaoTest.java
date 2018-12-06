@@ -1,4 +1,4 @@
-package com.zilliant.db;
+package com.zilliant.component;
 
 import com.zilliant.core.Person;;
 import io.dropwizard.testing.junit.DAOTestRule;
@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.util.List;
 

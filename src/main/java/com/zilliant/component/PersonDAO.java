@@ -1,4 +1,4 @@
-package com.zilliant.db;
+package com.zilliant.component;
 
 import com.zilliant.core.Person;
 import io.dropwizard.hibernate.AbstractDAO;

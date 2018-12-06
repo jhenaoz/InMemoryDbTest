@@ -2,7 +2,7 @@ package com.zilliant.resources;
 
 import com.codahale.metrics.annotation.Timed;
 import com.zilliant.core.Person;
-import com.zilliant.db.PersonDAO;
+import com.zilliant.component.PersonDAO;
 import io.dropwizard.hibernate.UnitOfWork;
 import io.dropwizard.jersey.params.LongParam;
 

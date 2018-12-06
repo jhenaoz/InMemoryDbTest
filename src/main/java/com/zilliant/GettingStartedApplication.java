@@ -1,8 +1,9 @@
 package com.zilliant;
 
 import com.zilliant.core.Person;
-import com.zilliant.db.PersonDAO;
+import com.zilliant.component.PersonDAO;
 import com.zilliant.resources.GettingStartedResource;
+import com.zilliant.resources.HelloWorldResource;
 import com.zilliant.resources.PersonResource;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
@@ -36,10 +37,10 @@ public class GettingStartedApplication extends Application<GettingStartedConfigu
 
         final PersonDAO personDao = new PersonDAO(hibernate.getSessionFactory());
         final PersonResource personResource = new PersonResource(personDao);
-
+        final HelloWorldResource helloWorldResource = new HelloWorldResource();
         environment.jersey().register(personResource);
         environment.jersey().register(resource);
-
+        environment.jersey().register(helloWorldResource);
     }
 
 
