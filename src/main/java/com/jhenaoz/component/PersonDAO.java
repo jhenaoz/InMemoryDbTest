@@ -1,6 +1,6 @@
-package com.zilliant.component;
+package com.jhenaoz.component;
 
-import com.zilliant.core.Person;
+import com.jhenaoz.core.Person;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 
@@ -20,6 +20,6 @@ public class PersonDAO extends AbstractDAO<Person> {
     }
 
     public List<Person> findAll() {
-        return list(namedQuery("com.zilliant.core.Person.findAll"));
+        return list(namedQuery("com.jhenaoz.core.Person.findAll"));
     }
 }

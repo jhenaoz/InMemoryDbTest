@@ -1,4 +1,4 @@
-package com.zilliant;
+package com.jhenaoz;
 
 import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;

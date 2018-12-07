@@ -1,0 +1,74 @@
+{
+  "provider": {
+    "name": "person_provider"
+  },
+  "consumer": {
+    "name": "person_consumer"
+  },
+  "interactions": [
+    {
+      "description": "Person not found",
+      "request": {
+        "method": "GET",
+        "path": "/application/persons/2"
+      },
+      "response": {
+        "status": 404
+      },
+      "providerStates": []
+    },
+    {
+      "description": "Get a person by id",
+      "request": {
+        "method": "GET",
+        "path": "/application/persons/1"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "fullName": "Juan David",
+          "id": 0,
+          "jobTitle": "Software Engineer"
+        }
+      },
+      "providerStates": []
+    },
+    {
+      "description": "Create a person",
+      "request": {
+        "method": "POST",
+        "path": "/application/persons",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "fullName": "Jhon Doe",
+          "jobTitle": "SDET"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "id": 0,
+          "fullName": "Jhon Doe",
+          "jobTitle": "SDET"
+        }
+      },
+      "providerStates": []
+    }
+  ],
+  "metadata": {
+    "pact-specification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "3.5.5"
+    }
+  }
+}

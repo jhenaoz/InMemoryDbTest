@@ -1,7 +1,7 @@
-package com.zilliant.resources;
+package com.jhenaoz.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import com.zilliant.api.Saying;
+import com.jhenaoz.api.Saying;
 
 
 import javax.ws.rs.GET;
@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Path("/hello-world")
+@Path("/hello")
 @Produces(MediaType.APPLICATION_JSON)
 public class GettingStartedResource {
     private final String template;

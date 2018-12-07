@@ -1,4 +1,4 @@
-package com.zilliant.core;
+package com.jhenaoz.core;
 
 
 import javax.persistence.Entity;
@@ -16,13 +16,14 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "people")
-@NamedQueries(
-        {
-                @NamedQuery(
-                        name = "com.zilliant.core.Person.findAll",
-                        query = "SELECT p FROM Person p"
-                )
-        })
+//TODO: FIX THIS
+//@NamedQueries(
+//{
+//        @NamedQuery(
+//                name = "com.zilliant.core.Person.findAll",
+//                query = "SELECT p FROM Person p"
+//        )
+//})
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

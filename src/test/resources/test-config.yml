@@ -5,7 +5,7 @@
 #logging:
 #  level: INFO
 #  loggers:
-#    com.zilliant: DEBUG
+#    com.jhenaoz: DEBUG
 #
 #database:
 #  driverClass: org.h2.Driver

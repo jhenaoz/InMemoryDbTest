@@ -1,10 +1,9 @@
-package com.zilliant;
+package com.jhenaoz;
 
-import com.zilliant.core.Person;
-import com.zilliant.component.PersonDAO;
-import com.zilliant.resources.GettingStartedResource;
-import com.zilliant.resources.HelloWorldResource;
-import com.zilliant.resources.PersonResource;
+import com.jhenaoz.core.Person;
+import com.jhenaoz.component.PersonDAO;
+import com.jhenaoz.resources.GettingStartedResource;
+import com.jhenaoz.resources.PersonResource;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.hibernate.HibernateBundle;
@@ -37,10 +36,8 @@ public class GettingStartedApplication extends Application<GettingStartedConfigu
 
         final PersonDAO personDao = new PersonDAO(hibernate.getSessionFactory());
         final PersonResource personResource = new PersonResource(personDao);
-        final HelloWorldResource helloWorldResource = new HelloWorldResource();
         environment.jersey().register(personResource);
         environment.jersey().register(resource);
-        environment.jersey().register(helloWorldResource);
     }
 
 

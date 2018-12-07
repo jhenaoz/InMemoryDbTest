@@ -1,13 +1,14 @@
-package com.zilliant.resources;
+package com.jhenaoz.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import com.zilliant.core.Person;
-import com.zilliant.component.PersonDAO;
+import com.jhenaoz.core.Person;
+import com.jhenaoz.component.PersonDAO;
 import io.dropwizard.hibernate.UnitOfWork;
 import io.dropwizard.jersey.params.LongParam;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 
 @Path("/persons")
@@ -21,13 +22,20 @@ public class PersonResource {
 
     @GET
     @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     @Timed
     @UnitOfWork
-    public Person findPerson(@PathParam("id") LongParam id) {
-        return personDAO.findById(id.get());
+    public Response findPerson(@PathParam("id") LongParam id) {
+        Person person = personDAO.findById(id.get());
+        if (person == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.ok(person).build();
+
     }
 
     @POST
+    @Produces(MediaType.APPLICATION_JSON)
     @Timed
     @UnitOfWork
     public Person createPerson (Person person) {
